@@ -1,9 +1,9 @@
 ---
 type: weekly
-week: <% tp.date.now("gggg-[W]ww") %>
-date: <% tp.date.now("YYYY-MM-DD") %>
+week: {{date:gggg-[W]ww}}
+date: {{date:YYYY-MM-DD}}
 ---
-# 周复盘 <% tp.date.now("gggg-[W]ww") %>
+# 周复盘 {{date:gggg-[W]ww}}
 
 ## 本周各项目进展
 - [[ ]]：
