@@ -1,0 +1,626 @@
+.digital-garden-publish-status-view ul {
+	list-style-type: none;
+	position: relative;
+	margin-left: 5px;
+	margin-top: 0;
+	max-height: 250px;
+	overflow: auto;
+}
+
+.digital-garden-publish-status-view h2 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.digital-garden-publish-status-view .collapsable {
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+@keyframes dg-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.dg-rotate {
+	animation: dg-rotate 4s linear infinite;
+}
+
+.dg-advanced-settings > summary {
+	cursor: pointer;
+	padding: 0.75em 0;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+/* Connection status styles */
+.connection-status {
+	display: flex;
+	align-items: flex-start;
+	gap: 6px;
+	margin: 0 0 8px;
+	font-size: var(--font-ui-small);
+}
+
+.connection-status:empty {
+	display: none;
+}
+
+.connection-status-icon {
+	flex: 0 0 auto;
+	width: 14px;
+	height: 14px;
+	margin-top: 2px;
+}
+
+/* Long messages (a 404 with the repo name) must wrap, not overflow. */
+.connection-status-text {
+	overflow-wrap: anywhere;
+}
+
+.connection-status-idle {
+	color: var(--text-muted);
+}
+
+.connection-status-loading {
+	color: var(--text-muted);
+}
+
+.connection-status-loading .connection-status-icon {
+	animation: dg-rotate 2s linear infinite;
+}
+
+/* The text stays in normal ink for contrast; the icon carries the status. */
+.connection-status-connected .connection-status-icon {
+	color: var(--text-success);
+}
+
+.connection-status-error .connection-status-icon {
+	color: var(--text-error);
+}
+
+/* Settings tab */
+.dg-settings-intro,
+.dg-settings-next,
+.dg-settings-note {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.dg-settings-next {
+	padding-block: 12px;
+}
+
+/* Loose text lines up with the text inside setting rows. */
+.dg-settings-intro,
+.dg-settings-next,
+.dg-settings-note,
+.dg-settings .connection-status,
+.dg-advanced-settings > summary {
+	padding-inline: var(--size-4-4);
+}
+
+/* Accent pulled toward the text color: readable in light themes too. */
+.dg-settings-intro a {
+	color: color-mix(in srgb, var(--text-accent) 75%, var(--text-normal));
+}
+
+.dg-settings-wide-input {
+	width: 20rem;
+	max-width: 100%;
+}
+
+/* Text filters modal: one native row per filter. */
+.dg-filter-row .setting-item-control {
+	flex-wrap: wrap;
+}
+
+.dg-filter-row input.dg-filter-pattern,
+.dg-filter-row input.dg-filter-replace {
+	width: 11rem;
+	max-width: 100%;
+}
+
+.dg-filter-row input.dg-filter-flags {
+	width: 4rem;
+}
+
+.dg-filter-invalid .setting-item-description {
+	color: var(--text-normal);
+}
+
+.dg-filter-invalid input.dg-filter-pattern {
+	border-color: var(--text-error);
+}
+
+/* Update Modal Styles */
+.dg-update-modal .modal-content {
+	padding: 0;
+}
+
+.dg-modal-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.dg-modal-title .svg-icon {
+	width: 20px;
+	height: 20px;
+}
+
+.dg-update-section {
+	padding: 16px;
+	background: var(--background-secondary);
+	border-radius: var(--radius-m);
+	margin-bottom: 16px;
+}
+
+.dg-update-info {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 12px;
+	background: var(--background-primary);
+	border-radius: var(--radius-m);
+	margin-bottom: 16px;
+	border: 1px solid var(--background-modifier-border);
+}
+
+.dg-update-info .svg-icon {
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+	color: var(--text-muted);
+}
+
+.dg-update-info-text {
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	line-height: 1.5;
+}
+
+.dg-update-button-container {
+	display: flex;
+	justify-content: center;
+}
+
+.dg-update-button-container button {
+	padding: 10px 24px;
+	font-size: 1em;
+}
+
+/* Update Progress States */
+.dg-update-progress {
+	margin-top: 16px;
+}
+
+.dg-update-loading,
+.dg-update-success,
+.dg-update-error {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 24px;
+	background: var(--background-secondary);
+	border-radius: var(--radius-m);
+}
+
+.dg-update-spinner {
+	margin-bottom: 16px;
+}
+
+.dg-update-spinner .svg-icon {
+	width: 32px;
+	height: 32px;
+	color: var(--interactive-accent);
+	animation: dg-rotate 1.5s linear infinite;
+}
+
+.dg-update-loading-text {
+	font-size: 1.1em;
+	font-weight: 500;
+	margin: 0 0 4px 0;
+}
+
+.dg-update-loading-subtext {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	margin: 0;
+}
+
+.dg-update-icon {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
+.dg-update-icon .svg-icon {
+	width: 28px;
+	height: 28px;
+}
+
+.dg-update-icon-success {
+	background: rgba(var(--color-green-rgb), 0.15);
+}
+
+.dg-update-icon-success .svg-icon {
+	color: var(--color-green);
+}
+
+.dg-update-icon-error {
+	background: rgba(var(--color-red-rgb), 0.15);
+}
+
+.dg-update-icon-error .svg-icon {
+	color: var(--color-red);
+}
+
+.dg-update-title {
+	margin: 0 0 8px 0;
+	font-size: 1.2em;
+}
+
+.dg-update-details {
+	width: 100%;
+	margin-top: 8px;
+	text-align: left;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+}
+
+.dg-update-details summary {
+	cursor: pointer;
+	text-align: center;
+}
+
+.dg-update-details pre {
+	max-height: 120px;
+	overflow: auto;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.dg-update-message {
+	color: var(--text-muted);
+	margin: 0 0 16px 0;
+}
+
+.dg-update-link-container {
+	margin-top: 8px;
+}
+
+.dg-update-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 16px;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-radius: var(--radius-m);
+	text-decoration: none;
+	font-weight: 500;
+	transition: opacity 0.15s ease;
+}
+
+.dg-update-link:hover {
+	opacity: 0.9;
+	text-decoration: none;
+	color: var(--text-on-accent);
+}
+
+.dg-update-link .svg-icon {
+	width: 14px;
+	height: 14px;
+}
+
+/* Recent pull requests in the template update modal */
+.dg-pr-history {
+	margin-top: 16px;
+	padding-top: 12px;
+	border-top: 1px solid var(--background-modifier-border);
+	font-size: var(--font-ui-small);
+}
+
+.dg-pr-history > summary {
+	cursor: pointer;
+	color: var(--text-muted);
+}
+
+.dg-pr-history-list {
+	margin: 8px 0 0;
+	padding-left: 1.2rem;
+}
+
+.dg-pr-history-list li {
+	margin: 4px 0;
+}
+
+/* "Site settings have moved" notice for existing users */
+.dg-settings-moved {
+	margin: 8px 0 16px;
+	padding: 14px 16px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	background: var(--background-secondary);
+}
+
+.dg-settings-moved-heading {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 6px;
+	font-weight: var(--font-semibold);
+}
+
+.dg-settings-moved-heading .svg-icon {
+	flex: 0 0 auto;
+	color: var(--interactive-accent);
+}
+
+.dg-settings-moved-text {
+	margin: 0 0 12px;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.dg-settings-moved-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+/* Forestry.md upgrade nudge (shown in the self-hosted setup panel) */
+.dg-forestry-upgrade-notice {
+	position: relative;
+	margin: 4px 0 20px;
+	padding: 14px 16px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	background: var(--background-secondary);
+}
+
+.dg-forestry-upgrade-heading {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	margin-bottom: 6px;
+	padding-right: 24px;
+}
+
+.dg-forestry-upgrade-heading .svg-icon {
+	width: 18px;
+	height: 18px;
+	color: var(--interactive-accent);
+}
+
+.dg-forestry-upgrade-text {
+	margin: 0 0 12px;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	line-height: 1.4;
+}
+
+.dg-forestry-upgrade-actions {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	flex-wrap: wrap;
+}
+
+.dg-forestry-upgrade-link {
+	font-size: var(--font-ui-small);
+	color: var(--text-accent);
+}
+
+.dg-forestry-upgrade-dismiss {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	box-shadow: none;
+	background: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.dg-forestry-upgrade-dismiss:hover {
+	color: var(--text-normal);
+	background: var(--background-modifier-hover);
+}
+
+.dg-forestry-upgrade-dismiss .svg-icon {
+	width: 16px;
+	height: 16px;
+}
+
+/* Forestry site-update status bar item: a sprout, then the state. Only
+   the icon pulses while building, so the words stay readable. */
+.dg-site-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	cursor: pointer;
+}
+
+.dg-site-status-icon {
+	display: inline-flex;
+}
+
+.dg-site-status-icon .svg-icon {
+	width: 14px;
+	height: 14px;
+}
+
+.dg-site-status.dg-site-status-updating .dg-site-status-icon {
+	color: var(--color-blue);
+	animation: dg-site-status-pulse 1.5s ease-in-out infinite;
+}
+
+/* Live without a home page: the sprout turns orange, as on the dashboard. */
+.dg-site-status.dg-site-status-warning .dg-site-status-icon {
+	color: var(--color-orange);
+}
+
+/* Error ink pulled toward the text color, for contrast at status-bar size. */
+.dg-site-status.dg-site-status-failed {
+	color: color-mix(in srgb, var(--text-error) 70%, var(--text-normal));
+}
+
+.dg-site-status:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 1px;
+	border-radius: var(--radius-s);
+}
+
+.dg-notice-address {
+	margin-top: 2px;
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+}
+
+@keyframes dg-site-status-pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
+}
+
+/* Publication Center banners: home page onboarding, missing publish
+   branch, and usage limits. */
+.dg-pc-home-banner,
+.dg-pc-branch-banner,
+.dg-pc-limit {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: var(--font-ui-small);
+	background: var(--background-secondary);
+}
+
+.dg-pc-home-banner .dg-pc-callout-header,
+.dg-pc-branch-banner .dg-pc-callout-header,
+.dg-pc-limit .dg-pc-callout-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.dg-pc-home-banner .dg-pc-callout-title,
+.dg-pc-branch-banner .dg-pc-callout-title,
+.dg-pc-limit .dg-pc-callout-title {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-weight: var(--font-semibold);
+}
+
+.dg-pc-branch-banner,
+.dg-pc-limit {
+	border-color: color-mix(in srgb, var(--text-warning) 45%, transparent);
+	background: color-mix(in srgb, var(--text-warning) 10%, transparent);
+}
+
+.dg-pc-limit a {
+	margin-left: 4px;
+}
+
+.dg-home-prompt-hint,
+.dg-connect-confirm-hint {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.dg-home-prompt-buttons,
+.dg-connect-confirm-buttons {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	margin-top: 16px;
+}
+
+.dg-notice-clickable {
+	cursor: pointer;
+}
+
+/* Focus. Ghost buttons drop their box-shadow, which also drops Obsidian's
+   focus ring; put it back for keyboard focus. The extra element in each
+   selector outranks the components' scoped rules. */
+.dg-publication-center-view button:focus-visible,
+.dg-plugins button:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+.dg-settings a:focus-visible,
+.dg-settings summary:focus-visible,
+.dg-publication-center-view a:focus-visible {
+	outline: 2px solid var(--background-modifier-border-focus);
+	outline-offset: 2px;
+	border-radius: var(--radius-s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.dg-rotate,
+	.connection-status-loading .connection-status-icon,
+	.dg-update-spinner .svg-icon {
+		animation-duration: 4s;
+	}
+
+	.dg-site-status.dg-site-status-updating .dg-site-status-icon {
+		animation: none;
+	}
+}
+
+/* Diff washes. Obsidian's success/error modifiers are solid colors, so
+   they are mixed down to a tint text stays readable on (as Obsidian does
+   in its own diff and callout styles). */
+.dg-diff-add {
+	background-color: color-mix(
+		in srgb,
+		var(--background-modifier-success) 20%,
+		transparent
+	);
+}
+
+.dg-diff-del {
+	background-color: color-mix(
+		in srgb,
+		var(--background-modifier-error) 20%,
+		transparent
+	);
+}
+
+/* Visually hidden, still read by screen readers. */
+.dg-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}

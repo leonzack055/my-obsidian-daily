@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"2cbd3277aaf939e7","type":"text","text":"obidian","x":-125,"y":-30,"width":105,"height":50},
+		{"id":"3e33dd08a01c920f","type":"text","text":"完成","x":-60,"y":-180,"width":250,"height":60},
+		{"id":"44f292545c549d6a","x":49,"y":66,"width":250,"height":60,"type":"text","text":""}
+	],
+	"edges":[
+		{"id":"866c555eba4a0277","fromNode":"2cbd3277aaf939e7","fromSide":"right","toNode":"3e33dd08a01c920f","toSide":"bottom"}
+	]
+}

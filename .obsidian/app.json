@@ -1,0 +1,11 @@
+{
+  "vimMode": true,
+  "tabSize": 2,
+  "livePreview": true,
+  "showLineNumber": false,
+  "showIndentGuide": true,
+  "foldHeading": true,
+  "strictLineBreaks": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Notes"
+}
