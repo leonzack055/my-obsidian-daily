@@ -1,3 +1,6 @@
 {
-  "showRibbon": false
+  "showRibbon": true,
+  "nativeMenus": true,
+  "cssTheme": "Minimal",
+  "accentColor": "#6d8897"
 }
