@@ -1,5 +1,18 @@
+# Obsidian 本地状态（每台机器不同，不该进版本库）
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+.obsidian/cache
 .trash/
-.DS_Store
+
+# 插件二进制：每次升级都会往历史里塞 MB 级副本；插件配置 data.json 仍然跟踪
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+
+# 插件的本机使用历史（非配置）
+.obsidian/plugins/various-complements/histories.json
+
+# 临时/系统文件
 nohup.out
+*.tmp
+*.log
+.DS_Store

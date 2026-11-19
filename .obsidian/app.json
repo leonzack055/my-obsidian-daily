@@ -7,5 +7,6 @@
   "foldHeading": true,
   "strictLineBreaks": false,
   "newFileLocation": "folder",
-  "newFileFolderPath": "Notes"
+  "newFileFolderPath": "Notes",
+  "attachmentFolderPath": "attachments"
 }
