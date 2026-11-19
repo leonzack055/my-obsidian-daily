@@ -1,0 +1,14 @@
+# 统一换行，避免不同系统同步时产生“整文件都改了”的假 diff
+* text=auto eol=lf
+
+# 二进制附件：不参与文本 diff / 换行转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.mp4 binary
+*.mov binary
+*.zip binary
+*.excalidraw text
