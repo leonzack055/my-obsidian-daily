@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="system-ui,-apple-system,'Segoe UI','Noto Sans CJK SC',sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <defs>
+    <path id="p1" d="M-9,0 Q-4.5,-22 0,0 Q4.5,22 9,0" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+  </defs>
+
+  <text x="24" y="30" font-size="18" font-weight="700" fill="#0f172a">一格 · 一个脉冲 · 一个 burst：三个不同的时间</text>
+
+  <!-- 时间阶梯 -->
+  <rect x="24" y="46" width="952" height="52" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="40" y="68" font-size="12.5" fill="#1e3a8a">6.5 GHz 振荡周期 <tspan font-weight="700">154 ps</tspan>　＜　单个脉冲宽度 <tspan font-weight="700">1–2 ns</tspan>　＜　脉冲之间的间隔（PRF 网格）<tspan font-weight="700">15.6 ns</tspan>　＜　一个 burst（3 个脉冲）<tspan font-weight="700">≈47 ns</tspan>　＜　一小节 ≈1 µs</text>
+  <text x="40" y="88" font-size="11.5" fill="#475569">6.5 GHz 是「脉冲内部」的振荡；15.6 ns 是「脉冲与脉冲之间」的距离 —— 两者不是一回事</text>
+
+  <!-- 行1：一格一个脉冲 -->
+  <text x="24" y="140" font-size="14" font-weight="700" fill="#1e293b">① 一格（15.6 ns）里放一个脉冲</text>
+  <rect x="80" y="154" width="200" height="58" fill="#f8fafc" stroke="#94a3b8"/>
+  <use href="#p1" transform="translate(180,183)"/>
+  <line x1="80" y1="150" x2="80" y2="146" stroke="#334155" stroke-width="1.2"/>
+  <line x1="280" y1="150" x2="280" y2="146" stroke="#334155" stroke-width="1.2"/>
+  <path d="M80,146 L280,146" stroke="#334155" stroke-width="1.2"/>
+  <text x="180" y="140" font-size="11" fill="#334155" text-anchor="middle">15.6 ns</text>
+  <text x="300" y="176" font-size="12" fill="#1e293b">脉冲本身只占 1–2 ns（约格子的 1/10）</text>
+  <text x="300" y="196" font-size="12" fill="#64748b">剩下 13–14 ns 是空的 —— 留给这个脉冲的回声散去</text>
+  <text x="300" y="216" font-size="11.5" fill="#a16207">脉冲内部在以 6.5 GHz 振荡：每 154 ps 一个周期，1–2 ns 里约 7–13 个周期</text>
+
+  <!-- 行2：burst -->
+  <text x="24" y="266" font-size="14" font-weight="700" fill="#1e293b">② 一个 burst = 连续几格，每格各放一个脉冲</text>
+  <rect x="80" y="280" width="200" height="58" fill="#eff6ff" stroke="#2563eb"/>
+  <rect x="280" y="280" width="200" height="58" fill="#eff6ff" stroke="#2563eb"/>
+  <rect x="480" y="280" width="200" height="58" fill="#eff6ff" stroke="#2563eb"/>
+  <use href="#p1" transform="translate(180,309)"/>
+  <use href="#p1" transform="translate(380,309)"/>
+  <use href="#p1" transform="translate(580,309)"/>
+  <path d="M80,348 L80,356 L680,356 L680,348" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="380" y="378" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="700">burst 跨度 ≈ 47 ns（3 格），但真正在辐射的只有 3–6 ns</text>
+  <text x="700" y="300" font-size="12" fill="#1e293b">burst 长度 = 连续几格</text>
+  <text x="700" y="320" font-size="12" fill="#64748b">（配置项：1 / 2 / 4 / 8 … 格）</text>
+  <text x="700" y="344" font-size="12" fill="#1e293b">一格里最多 1 个脉冲，</text>
+  <text x="700" y="362" font-size="12" fill="#64748b">所以 3 格 burst = 3 个脉冲</text>
+</svg>

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 916" width="1120" height="916" font-family="system-ui,-apple-system,'Segoe UI','Noto Sans CJK SC',sans-serif">
+  <rect width="1120" height="916" fill="#ffffff"/>
+  <defs>
+    <marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#334155"/></marker>
+  </defs>
+
+  <text x="28" y="34" font-size="19" font-weight="700" fill="#0f172a">图 2｜一帧里装什么 · SS-TWR / DS-TWR 怎么传消息与算距离</text>
+
+  <!-- ① 帧结构 -->
+  <text x="28" y="64" font-size="15" font-weight="700" fill="#1e293b">① 一帧长什么样：绝大部分是前导，真正的字节只在尾巴</text>
+  <rect x="60" y="84" width="600" height="56" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="360" y="110" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="middle">前导（固定样板）</text>
+  <text x="360" y="128" font-size="12" fill="#1d4ed8" text-anchor="middle">64 / 128 / 1024 / 4096 小节</text>
+  <rect x="660" y="84" width="52" height="56" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="686" y="117" font-size="11" font-weight="700" fill="#5b21b6" text-anchor="middle">SFD</text>
+  <rect x="712" y="84" width="120" height="56" fill="#fef3c7" stroke="#d97706"/>
+  <text x="772" y="117" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle">PHR</text>
+  <rect x="832" y="84" width="228" height="56" fill="#dcfce7" stroke="#059669"/>
+  <text x="946" y="108" font-size="12" font-weight="700" fill="#065f46" text-anchor="middle">MAC 头 + 载荷 + CRC</text>
+  <text x="946" y="126" font-size="11" fill="#065f46" text-anchor="middle">载荷可 0 字节</text>
+
+  <circle cx="60" cy="140" r="5" fill="#2563eb"/><circle cx="1060" cy="140" r="5" fill="#2563eb"/>
+  <text x="68" y="76" font-size="12" font-weight="700" fill="#1d4ed8">t1：帧发出瞬间（打点）</text>
+  <text x="1052" y="76" font-size="12" font-weight="700" fill="#1d4ed8" text-anchor="end">t4：帧收到瞬间（打点）</text>
+
+  <text x="360" y="160" font-size="11" fill="#64748b" text-anchor="middle">不装数据</text>
+  <text x="686" y="160" font-size="11" fill="#64748b" text-anchor="middle">定界</text>
+  <text x="772" y="160" font-size="11" fill="#64748b" text-anchor="middle">元信息</text>
+  <text x="946" y="160" font-size="11" fill="#64748b" text-anchor="middle">只有这里装字节</text>
+  <rect x="60" y="172" width="1000" height="34" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="76" y="194" font-size="12" fill="#334155">时间戳在「帧的两端边界」产生 —— 由芯片在收发瞬间打点，<tspan font-weight="700">不在载荷里传输</tspan></text>
+
+  <!-- ② SS-TWR -->
+  <text x="28" y="248" font-size="15" font-weight="700" fill="#1e293b">② SS-TWR：2 帧往返（便宜，但怕两端晶振不同）</text>
+  <line x1="170" y1="272" x2="170" y2="404" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="640" y1="272" x2="640" y2="404" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="170" y="266" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">A（发起）</text>
+  <text x="640" y="266" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">B（响应）</text>
+
+  <line x1="170" y1="296" x2="636" y2="296" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="288" font-size="12" fill="#1e293b" text-anchor="middle">① Poll：MAC头（源地址 / 序号）</text>
+  <line x1="640" y1="380" x2="174" y2="380" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="372" font-size="12" fill="#1e293b" text-anchor="middle">② Resp：MAC头 +（可选）我的时间戳</text>
+
+  <circle cx="170" cy="296" r="4" fill="#2563eb"/><circle cx="640" cy="296" r="4" fill="#ea580c"/>
+  <circle cx="640" cy="380" r="4" fill="#ea580c"/><circle cx="170" cy="380" r="4" fill="#2563eb"/>
+  <text x="162" y="290" font-size="11" fill="#1d4ed8" text-anchor="end">t1</text>
+  <text x="650" y="290" font-size="11" fill="#9a3412">t2</text>
+  <text x="650" y="394" font-size="11" fill="#9a3412">t3</text>
+  <text x="162" y="394" font-size="11" fill="#1d4ed8" text-anchor="end">t4</text>
+
+  <path d="M145,296 L145,380 M140,296 L150,296 M140,380 L150,380" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="138" y="330" font-size="11" fill="#1d4ed8" text-anchor="end">T_round</text>
+  <text x="138" y="346" font-size="10" fill="#64748b" text-anchor="end">（A 的钟）</text>
+  <path d="M665,296 L665,380 M660,296 L670,296 M660,380 L670,380" fill="none" stroke="#ea580c" stroke-width="1.4"/>
+  <text x="672" y="330" font-size="11" fill="#9a3412">T_reply</text>
+  <text x="672" y="346" font-size="10" fill="#64748b">（B 的钟）</text>
+
+  <rect x="775" y="278" width="315" height="120" rx="8" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="790" y="300" font-size="12" font-weight="700" fill="#7c2d12">ToF = (T_round − T_reply) ÷ 2</text>
+  <text x="790" y="322" font-size="11" fill="#7c2d12">误差 ≈ ½ · T_reply · 两端频率差</text>
+  <text x="790" y="342" font-size="11" fill="#7c2d12">等 1 ms、差 20 ppm → 10 ns → 3 m</text>
+  <text x="790" y="366" font-size="11" font-weight="700" fill="#b91c1c">⇒ 等待必须极短</text>
+  <text x="790" y="386" font-size="10" fill="#64748b">距离 = ToF × 光速</text>
+
+  <!-- ③ DS-TWR -->
+  <text x="28" y="440" font-size="15" font-weight="700" fill="#1e293b">③ DS-TWR：3 帧往返（多一帧，把两端晶振频率差代数消掉）</text>
+  <line x1="170" y1="464" x2="170" y2="656" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="640" y1="464" x2="640" y2="656" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="170" y="458" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">A（发起）</text>
+  <text x="640" y="458" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">B（响应）</text>
+
+  <line x1="170" y1="488" x2="636" y2="488" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="480" font-size="12" fill="#1e293b" text-anchor="middle">① Poll</text>
+  <line x1="640" y1="556" x2="174" y2="556" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="548" font-size="12" fill="#1e293b" text-anchor="middle">② Resp：（可选）带上 B 的 t2 / t3</text>
+  <line x1="170" y1="624" x2="636" y2="624" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="616" font-size="12" fill="#1e293b" text-anchor="middle">③ Final：把 A 的 t1 / t4 回给 B（或反之）</text>
+
+  <circle cx="170" cy="488" r="4" fill="#2563eb"/><circle cx="640" cy="488" r="4" fill="#ea580c"/>
+  <circle cx="640" cy="556" r="4" fill="#ea580c"/><circle cx="170" cy="556" r="4" fill="#2563eb"/>
+  <circle cx="170" cy="624" r="4" fill="#2563eb"/><circle cx="640" cy="624" r="4" fill="#ea580c"/>
+  <text x="162" y="482" font-size="11" fill="#1d4ed8" text-anchor="end">t1</text>
+  <text x="650" y="482" font-size="11" fill="#9a3412">t2</text>
+  <text x="650" y="570" font-size="11" fill="#9a3412">t3</text>
+  <text x="162" y="570" font-size="11" fill="#1d4ed8" text-anchor="end">t4</text>
+  <text x="162" y="638" font-size="11" fill="#1d4ed8" text-anchor="end">t5</text>
+  <text x="650" y="638" font-size="11" fill="#9a3412">t6</text>
+
+  <path d="M145,488 L145,556 M140,488 L150,488 M140,556 L150,556" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="138" y="518" font-size="11" fill="#1d4ed8" text-anchor="end">T_round1</text>
+  <path d="M145,556 L145,624 M140,556 L150,556 M140,624 L150,624" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="138" y="586" font-size="11" fill="#1d4ed8" text-anchor="end">T_reply2</text>
+  <path d="M665,488 L665,556 M660,488 L670,488 M660,556 L670,556" fill="none" stroke="#ea580c" stroke-width="1.4"/>
+  <text x="672" y="518" font-size="11" fill="#9a3412">T_reply1</text>
+  <path d="M665,556 L665,624 M660,556 L670,556 M660,624 L670,624" fill="none" stroke="#ea580c" stroke-width="1.4"/>
+  <text x="672" y="586" font-size="11" fill="#9a3412">T_round2</text>
+
+  <rect x="775" y="470" width="315" height="186" rx="8" fill="#ecfdf5" stroke="#059669"/>
+  <text x="790" y="492" font-size="12" font-weight="700" fill="#065f46">ToF = (Tr1·Tr2 − Tp1·Tp2)</text>
+  <text x="838" y="510" font-size="12" font-weight="700" fill="#065f46">÷ (Tr1+Tr2+Tp1+Tp2)</text>
+  <text x="790" y="534" font-size="11" fill="#065f46">Tr = 两个「往返」（各用本地钟）</text>
+  <text x="790" y="552" font-size="11" fill="#065f46">Tp = 两个「等待」（各用本地钟）</text>
+  <text x="790" y="576" font-size="11" fill="#065f46">交叉相乘 → 频率差被消掉</text>
+  <text x="790" y="600" font-size="11" font-weight="700" fill="#065f46">⇒ 厘米级才有可能</text>
+  <text x="790" y="622" font-size="10" fill="#64748b">距离 = ToF × 光速（1 ns ↔ 30 cm）</text>
+  <text x="790" y="642" font-size="10" fill="#64748b">等待过长仍有二阶残留 → T_reply 不能太长</text>
+
+  <!-- ④ 数据与时间戳 -->
+  <rect x="28" y="684" width="1062" height="176" rx="10" fill="#f8fafc" stroke="#64748b"/>
+  <text x="46" y="712" font-size="14" font-weight="700" fill="#0f172a">④ 「传的数据」和「时间戳」分别在哪儿</text>
+  <text x="46" y="740" font-size="12.5" fill="#334155">· <tspan font-weight="700">时间戳</tspan>：不在载荷里。两端各自在「帧发出 / 帧收到」的瞬间由芯片打点（40 bit，15.65 ps 一格）——所以同一帧在 A 端得到 t1、t4，在 B 端得到 t2、t3。</text>
+  <text x="46" y="764" font-size="12.5" fill="#334155">· <tspan font-weight="700">载荷里装什么</tspan>：MAC 头（源地址 / 序号）+ 可选字段 + CRC。测距本身可以 <tspan font-weight="700">0 字节业务数据</tspan>。</text>
+  <text x="46" y="788" font-size="12.5" fill="#334155">· <tspan font-weight="700">谁算距离</tspan>：一方要算 ToF，必须拿到对方的两个时间戳 → 通过载荷里的可选字段回传几个字节；否则两端各算各的那一份。</text>
+  <text x="46" y="812" font-size="12.5" fill="#334155">· <tspan font-weight="700">重要</tspan>：没有任何一帧在传「坐标」。传的是「谁在跟谁说话」+（可选）「我的时间戳」；距离由公式算出来，不是谁发给谁的结论。</text>
+  <text x="46" y="840" font-size="12" fill="#64748b">规模：一帧 ≈ 150–200 小节 ≈ 200 µs；4 锚 × 3 帧 = 12 帧 ≈ 2.2 ms → 20 Hz；前导长度是精度/刷新率的同一个旋钮。</text>
+</svg>

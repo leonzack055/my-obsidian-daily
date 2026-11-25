@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="706" viewBox="0 0 1120 706" font-family="system-ui,-apple-system,'Segoe UI','Noto Sans CJK SC',sans-serif">
+  <rect width="1120" height="706" fill="#ffffff"/>
+  <defs>
+    <marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="28" y="34" font-size="19" font-weight="700" fill="#0f172a">图 2｜SS-TWR 与 DS-TWR：怎么传消息、怎么算出距离</text>
+
+  <!-- ================= ① SS-TWR ================= -->
+  <text x="28" y="70" font-size="15" font-weight="700" fill="#1e293b">① SS-TWR（单边）：2 帧往返 —— 便宜但怕钟差</text>
+
+  <line x1="170" y1="86" x2="170" y2="216" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="640" y1="86" x2="640" y2="216" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="170" y="80" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">A（发起方）</text>
+  <text x="640" y="80" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">B（响应方）</text>
+
+  <line x1="170" y1="110" x2="636" y2="110" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="102" font-size="13" fill="#1e293b" text-anchor="middle">① Poll（我发一句）</text>
+
+  <line x1="640" y1="186" x2="174" y2="186" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="178" font-size="13" fill="#1e293b" text-anchor="middle">② Resp（你回一句）</text>
+
+  <circle cx="170" cy="110" r="4" fill="#2563eb"/><circle cx="640" cy="110" r="4" fill="#ea580c"/>
+  <circle cx="640" cy="186" r="4" fill="#ea580c"/><circle cx="170" cy="186" r="4" fill="#2563eb"/>
+  <text x="162" y="104" font-size="12" fill="#1d4ed8" text-anchor="end">t1</text>
+  <text x="650" y="104" font-size="12" fill="#9a3412">t2</text>
+  <text x="650" y="200" font-size="12" fill="#9a3412">t3</text>
+  <text x="162" y="200" font-size="12" fill="#1d4ed8" text-anchor="end">t4</text>
+
+  <path d="M145,110 L145,186" stroke="#2563eb" stroke-width="1.4"/>
+  <path d="M140,110 L150,110 M140,186 L150,186" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="138" y="140" font-size="12" fill="#1d4ed8" text-anchor="end">T_round</text>
+  <text x="138" y="156" font-size="11" fill="#64748b" text-anchor="end">（A 自己的钟量）</text>
+
+  <path d="M665,110 L665,186" stroke="#ea580c" stroke-width="1.4"/>
+  <path d="M660,110 L670,110 M660,186 L670,186" stroke="#ea580c" stroke-width="1.4"/>
+  <text x="672" y="140" font-size="12" fill="#9a3412">T_reply</text>
+  <text x="672" y="156" font-size="11" fill="#64748b">（B 自己的钟量）</text>
+
+  <rect x="775" y="86" width="315" height="132" rx="8" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="790" y="110" font-size="13" font-weight="700" fill="#7c2d12">ToF = (T_round − T_reply) ÷ 2</text>
+  <text x="790" y="134" font-size="12" fill="#7c2d12">误差 ≈ ½ · T_reply · 两端频率差</text>
+  <text x="790" y="156" font-size="12" fill="#7c2d12">例：等 1 ms、频率差 20 ppm</text>
+  <text x="790" y="174" font-size="12" fill="#7c2d12">　　→ 10 ns → 3 m 误差</text>
+  <text x="790" y="200" font-size="12" font-weight="700" fill="#b91c1c">⇒ 等待时间必须极短</text>
+
+  <!-- ================= ② DS-TWR ================= -->
+  <text x="28" y="262" font-size="15" font-weight="700" fill="#1e293b">② DS-TWR（双边）：3 帧往返 —— 多一帧，把钟差代数消掉</text>
+
+  <line x1="170" y1="278" x2="170" y2="470" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="640" y1="278" x2="640" y2="470" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="170" y="272" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">A（发起方）</text>
+  <text x="640" y="272" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">B（响应方）</text>
+
+  <line x1="170" y1="300" x2="636" y2="300" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="292" font-size="13" fill="#1e293b" text-anchor="middle">① Poll</text>
+  <line x1="640" y1="368" x2="174" y2="368" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="360" font-size="13" fill="#1e293b" text-anchor="middle">② Resp</text>
+  <line x1="170" y1="436" x2="636" y2="436" stroke="#334155" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="405" y="428" font-size="13" fill="#1e293b" text-anchor="middle">③ Final（我再确认一句）</text>
+
+  <circle cx="170" cy="300" r="4" fill="#2563eb"/><circle cx="640" cy="300" r="4" fill="#ea580c"/>
+  <circle cx="640" cy="368" r="4" fill="#ea580c"/><circle cx="170" cy="368" r="4" fill="#2563eb"/>
+  <circle cx="170" cy="436" r="4" fill="#2563eb"/><circle cx="640" cy="436" r="4" fill="#ea580c"/>
+  <text x="162" y="294" font-size="12" fill="#1d4ed8" text-anchor="end">t1</text>
+  <text x="650" y="294" font-size="12" fill="#9a3412">t2</text>
+  <text x="650" y="382" font-size="12" fill="#9a3412">t3</text>
+  <text x="162" y="382" font-size="12" fill="#1d4ed8" text-anchor="end">t4</text>
+  <text x="162" y="450" font-size="12" fill="#1d4ed8" text-anchor="end">t5</text>
+  <text x="650" y="450" font-size="12" fill="#9a3412">t6</text>
+
+  <path d="M145,300 L145,368 M140,300 L150,300 M140,368 L150,368" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="138" y="328" font-size="12" fill="#1d4ed8" text-anchor="end">T_round1</text>
+  <text x="138" y="344" font-size="11" fill="#64748b" text-anchor="end">（A）</text>
+  <path d="M145,368 L145,436 M140,368 L150,368 M140,436 L150,436" fill="none" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="138" y="398" font-size="12" fill="#1d4ed8" text-anchor="end">T_reply2</text>
+  <text x="138" y="414" font-size="11" fill="#64748b" text-anchor="end">（A）</text>
+
+  <path d="M665,300 L665,368 M660,300 L670,300 M660,368 L670,368" fill="none" stroke="#ea580c" stroke-width="1.4"/>
+  <text x="672" y="328" font-size="12" fill="#9a3412">T_reply1</text>
+  <text x="672" y="344" font-size="11" fill="#64748b">（B）</text>
+  <path d="M665,368 L665,436 M660,368 L670,368 M660,436 L670,436" fill="none" stroke="#ea580c" stroke-width="1.4"/>
+  <text x="672" y="398" font-size="12" fill="#9a3412">T_round2</text>
+  <text x="672" y="414" font-size="11" fill="#64748b">（B）</text>
+
+  <rect x="775" y="286" width="315" height="196" rx="8" fill="#ecfdf5" stroke="#059669"/>
+  <text x="790" y="310" font-size="13" font-weight="700" fill="#065f46">ToF = (Tr1·Tr2 − Tp1·Tp2)</text>
+  <text x="838" y="330" font-size="13" font-weight="700" fill="#065f46">÷ (Tr1+Tr2+Tp1+Tp2)</text>
+  <text x="790" y="356" font-size="12" fill="#065f46">Tr = 两个「往返时长」（各用本地钟）</text>
+  <text x="790" y="376" font-size="12" fill="#065f46">Tp = 两个「等待时长」（各用本地钟）</text>
+  <text x="790" y="404" font-size="12" fill="#065f46">四个时间交叉相乘 → 频率差被消掉</text>
+  <text x="790" y="430" font-size="12" font-weight="700" fill="#065f46">⇒ 厘米级才成为可能</text>
+  <text x="790" y="454" font-size="11" fill="#64748b">（等待过长仍有二阶残留，故 T_reply 不能太长）</text>
+
+  <!-- ================= 结果 ================= -->
+  <rect x="28" y="500" width="1062" height="104" rx="10" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="46" y="526" font-size="14" font-weight="700" fill="#0f172a">距离怎么来：距离 = ToF × 光速　　1 ns ↔ 30 cm</text>
+  <text x="46" y="552" font-size="13" fill="#334155">消息量与时间：一帧 ≈ 150–200 个小节（≈200 µs）；一次 DS-TWR = 3 帧；4 个锚 × 3 帧 = 12 帧 ≈ 2.2 ms → 20 Hz</text>
+  <text x="46" y="576" font-size="13" fill="#334155">载荷可以 0 字节：测的是「时间」，不是「传内容」。要回传数据才需要往尾部数据段塞字节（代价极大）</text>
+  <text x="46" y="598" font-size="12" fill="#64748b">A = 发起方（例：箱上的锚点）　B = 响应方（例：手环 tag）　两边各用各自晶振，不同步；靠往返把时钟差异消掉</text>
+</svg>

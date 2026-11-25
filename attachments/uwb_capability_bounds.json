@@ -1,0 +1,81 @@
+{
+  "conclusions": [
+    {
+      "source": "L. Flueratoru, S. Wehrli, M. Magno, E. S. Lohan, D. Niculescu, \"High-Accuracy Ranging and Localization With Ultrawideband Communications for Energy-Constrained Devices,\" IEEE Internet of Things Journal, vol. 9, no. 10, pp. 7463-7478, 2022 (DOI 10.1109/JIOT.2021.3125256)",
+      "measure": "LOS 室内办公区：DW1000(HRP, SS-TWR) 误差 0±5 cm，3db Access(LRP) 2±7 cm；6.5 GHz 信道，每 0.6 s 一次测距，每点采集 2-4 min，HTC Vive 真值精度 5 mm。硬 NLOS（29 cm 混凝土墙 / 人体遮挡）平均误差 44-60 cm；12.5 cm 石膏板与 LOS 同量级。",
+      "point": "表A·TWR-SS（单边双边测距）：两次报文最省电、刷新最高，实测 0±5 cm 但误差主要是系统性时钟漂移项——文中给出 1 ns 时间戳失配 ≈ 30 cm，802.15.4 允许 ±20 ppm 漂移，SS-TWR 误差 ∝ e1·Tp + ½·Tproc(e1−e2) 且处理时延在数百 µs 级。要点：SS-TWR 的厘米级只在“漂移已补偿”时成立，不补偿会随温度整体漂移。",
+      "link": "https://wi-fi.cs.pub.ro/~dniculescu/cercetare/upb/IOTJ22-High-Accuracy.pdf"
+    },
+    {
+      "source": "\"Precise Ranging: Modeling Bias and Variance of Double-Sided Two-Way Ranging with TDoA Extraction under Multipath and NLOS Effects,\" arXiv:2410.12826, 2024",
+      "measure": "DS-TWR 相对 CFO 补偿的单边法误差与方差更小；从 DS-TWR 报文中旁听提取的 DS-TDoA 方差约为 DS-TWR 的 5 倍；双方响应时延对称时两者方差同时下降（以上为摘要口径）。",
+      "point": "表A·TWR-DS（双边双边测距）：三报文把相对钟漂消掉，是唯一在原理上不受回环时延影响的模式，代价是 airtime 增加约 1.5 倍（按报文数推算，非实测）。要点：DS 只解决“钟”不解决“径”——上面那篇 IoT-J 的 44-60 cm 硬 NLOS 偏置是在 SS-TWR 配置下测的，换 DS 也不会减小，因为偏置来自多径延迟而非时钟。",
+      "link": "https://arxiv.org/abs/2410.12826"
+    },
+    {
+      "source": "D. Vecchia, P. Corbalán, T. Istomin, G. P. Picco, \"TALLA: Large-scale TDoA Localization with Ultra-wideband Radios,\" IPIN 2019",
+      "measure": "6 锚大厅（HALL）：99% 样本误差 ≤20 cm（3.3 Hz 同步）；走廊 CORRIDOR 场景 2D 误差 75/90/99 分位 = 69/89/377 cm，而大厅为 11/13/21 cm；定位输出 90 samples/s；同步信标 1-10 Hz，无外壳节点需 ≥3.3 Hz 才稳定。",
+      "point": "表A·TDoA：标签只发不收、刷新率与容量最好，但精度完全押在锚点纳秒级同步和几何构型上。要点：同一套硬件从大厅搬到走廊，75 分位误差从 11 cm 变成 69 cm——拐角/闸机这种 DOP 差的位置，TDoA 是三种模式里最先崩的。",
+      "link": "https://pablocorbalan.com/files/papers/talla-ipin19.pdf"
+    },
+    {
+      "source": "\"Angle of Arrival and Centimeter Distance Estimation on a Smart UWB Sensor Node,\" IEEE Transactions on Instrumentation and Measurement, 2023 (arXiv:2312.13672)",
+      "measure": "±45° 视场内 3 m 处 AoA 的 MSE 0.59°、MAE 5.21°；全距离最大 MSE 2.40°、MAE 8.46°；扩展到 ±60° 时 MSE 升至 12.00°；PDoA 在 50-60° 处发生 wrap-around 折返，背后 135-225° 区间 MSE 13.51-23.95°；11 min 内 3000 次交换无漂移，全角度 σ=2.45°。",
+      "point": "表A·PDoA/AoA：双天线相位差单锚即可出角，±45° 内 2-5°，但存在硬视场边界。要点：50-60° 的 wrap-around 会产生前后镜像解，目标绕到侧后方时角度不是“变差”而是“指错方向”。",
+      "link": "https://arxiv.org/abs/2312.13672"
+    },
+    {
+      "source": "Qorvo, \"DW3300Q Ultra Wideband Low-Power Transceiver Datasheet,\" Rev E, 2022, Table 15 Location Accuracy Characteristics",
+      "measure": "标称：测距精度 ±6 cm（BPRF3、LOS、校准后），测距标准差 3 cm；PDoA 精度 ±12.5°（±180° 范围）、σ=5°；等效 AoA 精度 ±6.25°（±90° 范围）、σ=2.5°；器件标称资产定位精度 10 cm。",
+      "point": "芯片厂给出的 ±6 cm / ±6.25° 是“校准后、LOS、单链路”的乐观值，且明确注明 AoA 精度约为 PDoA 精度的 2 倍改善。要点：选型时把 datasheet 的 6 cm 当作上界，工程预算应按实测的 10-30 cm 甚至 NLOS 的 44-60 cm 做。",
+      "link": "https://www.mouser.com/pdfDocs/DW3300QDataSheet5.pdf"
+    },
+    {
+      "source": "B. Van Herbruggen, S. Luchie, R. Wilssens, E. De Poorter, \"Single Anchor Localization by Combining UWB Angle-of-Arrival and Two-Way-Ranging: an Experimental Evaluation of the DW3000,\" Ghent University-imec, INTEC-IDLab",
+      "measure": "单锚（TWR 距离 + 2D AoA）在 50 m² 区域内平均定位误差最好 43.3 cm；AoA 误差 4.3-4.6°（自行用 CIR 解算 STS1/STS2 相位差）vs 6.6°（直接读芯片寄存器）；入射角超过 45° 后角度精度明显恶化。",
+      "point": "单锚方案的定位天花板在 0.4 m 量级，且要靠 CIR 后处理把角度从 6.6° 压到 4.5°。要点：43.3 cm 的绝对定位误差在 1 m 距离上等价于约 ±25° 的方位误差——够“跟住人”，不够“贴着行李箱侧壁避障”。",
+      "link": "https://imec-publications.be/server/api/core/bitstreams/47c01cfd-67e7-4684-9145-d0e5336639f3/content"
+    },
+    {
+      "source": "\"Performance Evaluation of a UWB Positioning System Applied to Static and Mobile Use Cases in Industrial Scenarios,\" Electronics (MDPI) 11(20):3294, 2022",
+      "measure": "开阔区测距误差约 5 cm、2D 中位误差 16 cm；近金属货架/夹具的低位点测距误差 >60 cm，99 分位标准差 40 cm（开阔区仅 12 cm）；系统最高更新率 100 Hz，实测取 50 Hz（1 m/s 时每样本间隔 2 cm）；72 个点位 × 3 个高度、约 81.5 万样本。",
+      "point": "同一套商业系统：开阔高位 5 cm，金属堆里的低位点 60 cm 以上，误差跳一个数量级。要点：行李箱天线高度天然在 0.3-0.6 m 的“贴地最差区”，机场金属行李架旁正是这个最差点位。",
+      "link": "https://www.mdpi.com/2079-9292/11/20/3294"
+    },
+    {
+      "source": "\"Robust IMU-Based Mitigation of Human Body Shadowing in UWB Indoor Positioning\" (PMC10575093), 人体自遮挡实测与文献汇总",
+      "measure": "实测（mocap 真值）：身体-标签-锚点夹角 φ<90° 时中位误差 4 cm、p99 32 cm；φ>160° 时中位误差 32 cm、p99 1.53 m、离群值达 4.05 m。文献汇总：67.5°<φ<112° 平均误差由 10 cm 升至 20 cm，φ>112° 达 60 cm；胸挂标签在真距 <3 m 时曾测到 3 m 误差。",
+      "point": "人体遮挡产生的是单边正偏置，且随朝向在 4 cm / 32 cm / 1.5 m 三档之间跳变——绕射（creep wave）与反射被误判为首径所致。要点：手环佩戴者一转身，测距就从厘米级跳到 0.3-1.5 m，而且永远偏大；滤波无法“平均掉”，只能建模为“测得距离 ≥ 真距”的上界约束。",
+      "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10575093/"
+    },
+    {
+      "source": "M. Heydariaan, H. Mohammadmoradi, O. Gnawali, \"Toward Standard Non-line-of-sight Benchmarking of Ultra-wideband Radio-based Localization,\" CPSBench 2018",
+      "measure": "0.024 mm 厚的一层铝箔即可完全阻断 UWB 通信（收不到包、无法测距）；允许绕射时真值 407 cm、中位估计 405.18 cm，但链路仅在特定几何下可用。",
+      "point": "金属对 UWB 不是“衰减”而是“开关”：亚微米级铝层就能把链路打成 0。要点：电梯轿厢、金属行李架、闸机金属框会造成整条链路丢失而非精度下降，控制器必须有丢包降级路径，不能假设测距连续。",
+      "link": "https://nsl.cs.uh.edu/papers/uwbnlos-cpsbench18.pdf"
+    },
+    {
+      "source": "N. A. Alsindi, B. Alavi, K. Pahlavan, \"Measurement and Modeling of Ultrawideband TOA-Based Ranging in Indoor Multipath Environments,\" IEEE Trans. Vehicular Technology 58(3), 2009",
+      "measure": "4.5 GHz 标称、500 MHz 与 3 GHz 两种带宽；在有金属柜、金属货架、电梯井、自动售货机的办公楼内，直达径（DP）被阻塞的概率高达 90%；NLOS 误差只出现正值且带重尾（elevator shaft、成排柜体、金属门贡献大正偏差）。",
+      "point": "这是机理性证据：金属构件把 DP 埋到接收机动态范围以下，接收机锁到延迟的反射径，误差恒为正。要点：机场/车站的金属行李架、电梯井、自动售货机密度与办公楼同量级，接近 90% 的 DP 阻塞概率意味着“偶尔才有一条干净链路”，融合层必须按链路质量而不是按数量做加权。",
+      "link": "https://akwww.wpi.edu/cwins/htdocs%20-%20Copy%20(2)/publications/docs/Measurement%20and%20modeling%20of%20UWB%20TOA-based%20ranging%20in%20indoor%20environments.pdf"
+    },
+    {
+      "source": "S. Bastiaens et al., \"Experimental Benchmarking of Next-Gen Indoor Positioning Technologies (Unmodulated) Visible Light Positioning and Ultra-Wideband,\" IEEE Internet of Things Journal, 2022 (DOI 10.1109/JIOT.2022.3161791)",
+      "measure": "8 锚非对称双边 TWR（aSDS-TWR）系统，8×6 m 开阔区、两种高度：LOS 下中位与 90 分位定位误差约 5 cm 与 10 cm；换成四种不同金属柜配置的 NLOS 场景后 UWB 明显退化，VLP 在该 2D、小倾角条件下反超 UWB。",
+      "point": "这是“多锚 + 最优部署 + LOS”能做到的最好成绩：中位 5 cm、p90 10 cm。要点：5 cm 是天花板而非预期值——同一实验里仅仅摆几组金属柜就让 UWB 输给可见光，说明精度预算必须按 NLOS 而非 LOS 制定。",
+      "link": "https://doi.org/10.1109/jiot.2022.3161791"
+    },
+    {
+      "source": "\"Selecting and Combining UWB Localization Algorithms: Insights and Recommendations From a Multi-Metric Benchmark,\" IEEE Access 12:16881-16901, 2024",
+      "measure": "同一实验场内 11 种算法、16 个数据集（TWR 与 TDoA 各含 LOS/NLOS、含“尖锐拐角”动态轨迹），结论：NLOS 对 TDoA 的影响显著大于 TWR；同等条件下 TWR 精度最高，TDoA 的优势是可扩展性与标签功耗；UWB 总体精度从最优条件下的数厘米到真实条件下的约 30 cm。",
+      "point": "技术选型的横向结论：遮挡场景优先 TWR，多标签/低功耗优先 TDoA，而“约 30 cm”才是真实工况的合理预期。要点：这份基准明确警告不要直接套用文献里的精度数字——环境一变，同一算法的排名都会变。",
+      "link": "https://doi.org/10.1109/access.2024.3358274"
+    }
+  ],
+  "hard_failure_modes": [
+    "【硬失效 1：人体/人群遮挡 → 单边正偏置不可平均】机理：目标身体或身前行人把直达径衰减到接收机动态范围以下，接收机锁到绕射波或反射径，飞行时间只可能变长，故误差恒为正、且随相对朝向在 4 cm / 32 cm / 1.5 m 三档跳变。文献证据：φ<90° 中位 4 cm、p99 32 cm；φ>160° 中位 32 cm、p99 1.53 m、离群 4.05 m（PMC10575093 实测，mocap 真值）；独立测量中混凝土/人体硬 NLOS 平均误差 44-60 cm（Flueratoru, IoT-J 2022）；胸挂标签在真距 <3 m 时曾记录 3 m 误差。工程含义：1.5 m/s 跟随、0.5-1.5 m 间距下，一次 0.5 s 的遮挡即产生 0.75 m 的位置漂移且方向偏向“更远”，任何纯 UWB 闭环都会把箱子往外推；必须(a)把测距当作上界约束 d_meas ≥ d_true 做单边滤波，(b)用 IMU/轮速在遮挡窗口内做 ≤0.3 s 的外推，(c)在人流密集段主动降速并放大安全间距，而不是相信滤波后的距离。",
+    "【硬失效 2：金属环境 → 链路直接归零而非精度下降】机理：金属表面近乎全反射，直达径被遮挡后仅剩强反射多径；更极端时能量被完全吸收/屏蔽，接收端收不到首径包。文献证据：0.024 mm 一层铝箔即可完全阻断 UWB 通信，收不到包、无法测距（CPSBench 2018）；办公楼内含金属柜、金属货架、电梯井时直达径阻塞概率高达 90%，NLOS 误差只出现正值且重尾（Alsindi et al., IEEE TVT 2009）；工业场景中近金属货架的低位点测距误差 >60 cm、99 分位标准差 40 cm，而开阔高位仅约 5 cm（Electronics 11(20):3294）；8 锚系统仅摆几组金属柜就从 LOS 的 5 cm/10 cm 退化到被可见光反超（IoT-J 2022）。工程含义：机场金属行李架、电梯轿厢、闸机金属框会造成整条链路丢失，若融合层按“参与解算的锚点数”投票，会在金属旁得到 3 条全错的链路而不是 0 条；必须用 CIR 首径功率/前导信噪比做逐链路 NLOS 分类与降权，并在连续丢包 >200 ms 时切换到近场传感（超声/ToF 光/视觉）而非继续外推。",
+    "【硬失效 3：拐角/几何退化 + 单锚 AoA 视场与前后模糊】机理：拐角与闸机使可见锚点从 4 个掉到 1-2 个，DOP 急剧放大；单锚 AoA 在 ±45° 外精度崩塌，PDoA 在 50-60° 处 wrap-around，背后扇区给出镜像解（前后不分）。文献证据：同一 TDoA 系统大厅 2D 误差 75 分位 11 cm、走廊 69 cm、99 分位 377 cm（TALLA, IPIN 2019）；单锚 TWR+AoA 在 50 m² 内最好也只有 43.3 cm 平均误差，且 >45° 后角度精度迅速恶化（imec, DW3000 实测）；PDoA 在 ±45° 内 MSE 0.59°、扩到 ±60° 时 MSE 12.00°、135-225° 扇区 MSE 13.5-23.9°（IEEE TIM 2023, arXiv:2312.13672）。工程含义：目标绕过拐角时 UWB 不是“精度变差”而是给出一个方向完全错误的镜像解，跟随控制器会朝反方向加速；必须以多锚几何一致性（残差检验）或运动连续性（与 IMU 预测的方位差 >60° 即判为镜像）做硬门限拒绝，并在拐角处退化为“沿墙/沿路径点跟随 + 视觉重捕”，而不是靠单锚 AoA 硬撑。"
+  ]
+}

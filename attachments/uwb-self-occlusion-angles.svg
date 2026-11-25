@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1340" viewBox="0 0 1500 1340" font-family="Noto Serif CJK SC, Noto Sans CJK SC, sans-serif">
+<rect width="1500" height="1340" fill="#ffffff"/>
+<text x="750.0" y="40" font-size="25" text-anchor="middle" fill="#111" font-weight="600">人体自遮挡：箱子在不同方位时，4 个锚还剩几个可见</text>
+<text x="750.0" y="66" font-size="14" text-anchor="middle" fill="#666">2D 俯视模型 · 人朝上走（+y）· 腕部 tag 在右手 · 箱子距离 1.5 m · 躯干 45×25 cm 视为实心吸收体</text>
+<text x="750.0" y="90" font-size="13" text-anchor="middle" fill="#8a6d00">绿实线 = 视线通畅　红虚线 = 被自己躯干挡住　灰色方块 = 躯干　白框 = 箱面（4 个锚在四角）</text>
+<rect x="60" y="140" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="260.0" y="293.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="280.0" y1="305.0" x2="280.0" y2="278.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="280.0" y="272.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="253.3" y="418.5" width="53.4" height="40.1" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="306.7" y1="296.1" x2="257.8" y2="454.1" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="306.7" y1="296.1" x2="302.2" y2="454.1" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="306.7" y1="296.1" x2="257.8" y2="422.9" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="306.7" y1="296.1" x2="302.2" y2="422.9" stroke="#1a7f37" stroke-width="1.8"/>
+<rect x="253.2" y="449.6" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="297.8" y="449.6" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="253.2" y="418.4" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="297.8" y="418.4" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<circle cx="306.7" cy="296.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="315.7" y="290.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="72" y="162" font-size="15" fill="#1a7f37" font-weight="600">θ = 0°　→　3/4 可见</text>
+<text x="488" y="162" font-size="11" text-anchor="end" fill="#8b95a0">正后方</text>
+<rect x="530" y="140" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="730.0" y="293.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="750.0" y1="305.0" x2="750.0" y2="278.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="750.0" y="272.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="688.7" y="413.9" width="53.4" height="40.1" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="776.7" y1="296.1" x2="693.2" y2="449.5" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="776.7" y1="296.1" x2="737.7" y2="449.5" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="776.7" y1="296.1" x2="693.2" y2="418.4" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="776.7" y1="296.1" x2="737.7" y2="418.4" stroke="#1a7f37" stroke-width="1.8"/>
+<rect x="688.7" y="445.0" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="733.2" y="445.0" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="688.7" y="413.9" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="733.2" y="413.9" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<circle cx="776.7" cy="296.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="785.7" y="290.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="542" y="162" font-size="15" fill="#8a6d00" font-weight="600">θ = 15°　→　2/4 可见</text>
+<text x="958" y="162" font-size="11" text-anchor="end" fill="#8b95a0">同侧</text>
+<rect x="1000" y="140" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="1200.0" y="293.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="1220.0" y1="305.0" x2="1220.0" y2="278.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="1220.0" y="272.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="1126.5" y="400.6" width="53.4" height="40.1" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="1246.7" y1="296.1" x2="1131.0" y2="436.2" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="1246.7" y1="296.1" x2="1175.5" y2="436.2" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="1246.7" y1="296.1" x2="1131.0" y2="405.0" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="1246.7" y1="296.1" x2="1175.5" y2="405.0" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<rect x="1126.5" y="431.7" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="1171.0" y="431.7" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="1126.5" y="400.5" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="1171.0" y="400.5" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<circle cx="1246.7" cy="296.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="1255.7" y="290.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="1012" y="162" font-size="15" fill="#cf222e" font-weight="600">θ = 30°　→　0/4 可见</text>
+<text x="1428" y="162" font-size="11" text-anchor="end" fill="#8b95a0">同侧</text>
+<rect x="60" y="520" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="260.0" y="673.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="280.0" y1="685.0" x2="280.0" y2="658.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="280.0" y="652.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="158.9" y="759.4" width="53.4" height="40.1" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="306.7" y1="676.1" x2="163.4" y2="795.0" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="306.7" y1="676.1" x2="207.9" y2="795.0" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="306.7" y1="676.1" x2="163.4" y2="763.8" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="306.7" y1="676.1" x2="207.9" y2="763.8" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<rect x="158.9" y="790.5" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="203.4" y="790.5" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="158.9" y="759.3" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="203.4" y="759.3" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<circle cx="306.7" cy="676.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="315.7" y="670.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="72" y="542" font-size="15" fill="#cf222e" font-weight="600">θ = 45°　→　0/4 可见</text>
+<text x="488" y="542" font-size="11" text-anchor="end" fill="#8b95a0">同侧</text>
+<rect x="530" y="520" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="730.0" y="673.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="750.0" y1="685.0" x2="750.0" y2="658.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="750.0" y="652.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="607.7" y="731.7" width="53.4" height="40.1" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="776.7" y1="676.1" x2="612.1" y2="767.3" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="776.7" y1="676.1" x2="656.6" y2="767.3" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="776.7" y1="676.1" x2="612.1" y2="736.2" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="776.7" y1="676.1" x2="656.6" y2="736.2" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<rect x="607.6" y="762.8" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="652.1" y="762.8" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="607.6" y="731.7" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="652.1" y="731.7" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<circle cx="776.7" cy="676.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="785.7" y="670.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="542" y="542" font-size="15" fill="#cf222e" font-weight="600">θ = 60°　→　0/4 可见</text>
+<text x="958" y="542" font-size="11" text-anchor="end" fill="#8b95a0">同侧</text>
+<rect x="1000" y="520" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="1200.0" y="673.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="1220.0" y1="685.0" x2="1220.0" y2="658.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="1220.0" y="652.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="1059.8" y="665.0" width="53.4" height="40.0" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="1246.7" y1="676.1" x2="1064.2" y2="700.6" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="1246.7" y1="676.1" x2="1108.8" y2="700.6" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="1246.7" y1="676.1" x2="1064.2" y2="669.4" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="1246.7" y1="676.1" x2="1108.8" y2="669.4" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<rect x="1059.8" y="696.1" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="1104.2" y="696.1" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="1059.8" y="664.9" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="1104.2" y="664.9" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<circle cx="1246.7" cy="676.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="1255.7" y="670.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="1012" y="542" font-size="15" fill="#cf222e" font-weight="600">θ = 90°　→　0/4 可见</text>
+<text x="1428" y="542" font-size="11" text-anchor="end" fill="#8b95a0">同侧</text>
+<rect x="60" y="900" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="260.0" y="1053.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="280.0" y1="1065.0" x2="280.0" y2="1038.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="280.0" y="1032.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="137.7" y="978.2" width="53.4" height="40.0" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="306.7" y1="1056.1" x2="142.1" y2="1013.8" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+<line x1="306.7" y1="1056.1" x2="186.6" y2="1013.8" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="306.7" y1="1056.1" x2="142.1" y2="982.7" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="306.7" y1="1056.1" x2="186.6" y2="982.7" stroke="#1a7f37" stroke-width="1.8"/>
+<rect x="137.6" y="1009.3" width="9" height="9" fill="#cf222e" rx="1.5"/>
+<rect x="182.1" y="1009.3" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="137.6" y="978.2" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="182.1" y="978.2" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<circle cx="306.7" cy="1056.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="315.7" y="1050.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="72" y="922" font-size="15" fill="#1a7f37" font-weight="600">θ = 120°　→　3/4 可见</text>
+<text x="488" y="922" font-size="11" text-anchor="end" fill="#8b95a0">对侧</text>
+<rect x="530" y="900" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="730.0" y="1053.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="750.0" y1="1065.0" x2="750.0" y2="1038.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="750.0" y="1032.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="656.5" y="929.4" width="53.4" height="40.1" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="776.7" y1="1056.1" x2="661.0" y2="965.0" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="776.7" y1="1056.1" x2="705.5" y2="965.0" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="776.7" y1="1056.1" x2="661.0" y2="933.8" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="776.7" y1="1056.1" x2="705.5" y2="933.8" stroke="#1a7f37" stroke-width="1.8"/>
+<rect x="656.5" y="960.5" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="701.0" y="960.5" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="656.5" y="929.3" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="701.0" y="929.3" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<circle cx="776.7" cy="1056.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="785.7" y="1050.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="542" y="922" font-size="15" fill="#1a7f37" font-weight="600">θ = 150°　→　4/4 可见</text>
+<text x="958" y="922" font-size="11" text-anchor="end" fill="#8b95a0">对侧</text>
+<rect x="1000" y="900" width="440" height="330" rx="8" fill="#fbfcfe" stroke="#e2e6ea"/>
+<rect x="1200.0" y="1053.9" width="40.1" height="22.2" fill="#d8dde3" stroke="#9aa4ae"/>
+<line x1="1220.0" y1="1065.0" x2="1220.0" y2="1038.3" stroke="#9aa4ae" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="1220.0" y="1032.3" font-size="10.5" text-anchor="middle" fill="#8b95a0">前进</text>
+<rect x="1193.3" y="911.5" width="53.4" height="40.1" fill="#ffffff" stroke="#7aa7d8" stroke-width="1.6"/>
+<line x1="1246.7" y1="1056.1" x2="1197.8" y2="947.1" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="1246.7" y1="1056.1" x2="1242.2" y2="947.1" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="1246.7" y1="1056.1" x2="1197.8" y2="915.9" stroke="#1a7f37" stroke-width="1.8"/>
+<line x1="1246.7" y1="1056.1" x2="1242.2" y2="915.9" stroke="#1a7f37" stroke-width="1.8"/>
+<rect x="1193.2" y="942.6" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="1237.8" y="942.6" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="1193.2" y="911.4" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<rect x="1237.8" y="911.4" width="9" height="9" fill="#1a7f37" rx="1.5"/>
+<circle cx="1246.7" cy="1056.1" r="5.5" fill="#cf222e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="1255.7" y="1050.1" font-size="10.5" fill="#cf222e">tag</text>
+<text x="1012" y="922" font-size="15" fill="#1a7f37" font-weight="600">θ = 180°　→　4/4 可见</text>
+<text x="1428" y="922" font-size="11" text-anchor="end" fill="#8b95a0">正前方</text>
+<text x="60" y="1300" font-size="13.5" fill="#333"><tspan font-weight="600">读图</tspan>：θ = 箱子相对「人的正后方」的偏角；<tspan fill="#cf222e">同侧 30°–90° 时 4 个锚全被自己躯干挡住（0/4）</tspan>，正后方与对侧最好。</text>
+<text x="60" y="1326" font-size="12.5" fill="#666">⚠️ 2D 简化：3D 实际还有两腿间隙、摆臂、tag 在 0.8 m 高而锚在 0.3 m 高的斜向路径 —— 真实可见数通常比此图乐观 1 个锚。趋势可靠，绝对值须真人实测。</text>
+</svg>

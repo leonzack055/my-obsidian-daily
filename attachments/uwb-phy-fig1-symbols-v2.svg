@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 884" width="1120" height="884" font-family="system-ui,-apple-system,'Segoe UI','Noto Sans CJK SC',sans-serif">
+  <rect width="1120" height="884" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#334155"/></marker>
+    <path id="blip" d="M-11,0 Q-5.5,-19 0,0 Q5.5,19 11,0" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+    <pattern id="grid" width="15.35" height="64" patternUnits="userSpaceOnUse"><path d="M0,0 V64" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/></pattern>
+  </defs>
+
+  <text x="28" y="34" font-size="19" font-weight="700" fill="#0f172a">图 1｜时钟 · 一小节怎么装信息 · 一小节在 PRF 网格里占多少</text>
+
+  <text x="28" y="66" font-size="15" font-weight="700" fill="#1e293b">① 时钟：一条分频链，同时供给三样东西</text>
+  <rect x="30" y="80" width="150" height="56" rx="8" fill="#eef2ff" stroke="#6366f1"/>
+  <text x="105" y="104" font-size="14" font-weight="700" fill="#3730a3" text-anchor="middle">晶体</text>
+  <text x="105" y="123" font-size="13" fill="#3730a3" text-anchor="middle">38.4 MHz</text>
+  <line x1="180" y1="108" x2="228" y2="108" stroke="#334155" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="205" y="100" font-size="12" fill="#475569" text-anchor="middle">×13</text>
+  <rect x="232" y="80" width="190" height="56" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="327" y="104" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">主时钟</text>
+  <text x="327" y="123" font-size="13" fill="#1d4ed8" text-anchor="middle">499.2 MHz（2.0032 ns）</text>
+  <line x1="422" y1="108" x2="460" y2="108" stroke="#334155" stroke-width="1.6"/>
+  <polyline points="460,108 460,58 508,58" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#ar)"/>
+  <polyline points="460,108 460,158 508,158" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="484" y="50" font-size="12" fill="#475569" text-anchor="middle">÷8</text>
+  <text x="484" y="176" font-size="12" fill="#475569" text-anchor="middle">×128</text>
+  <rect x="510" y="34" width="278" height="48" rx="8" fill="#dcfce7" stroke="#059669"/>
+  <text x="649" y="54" font-size="13" font-weight="700" fill="#065f46" text-anchor="middle">PRF 网格　62.4 MHz</text>
+  <text x="649" y="72" font-size="12" fill="#065f46" text-anchor="middle">每 15.6 ns 一个「脉冲落点」</text>
+  <rect x="510" y="134" width="278" height="48" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="649" y="154" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">时间戳计数器　63.9 GHz</text>
+  <text x="649" y="172" font-size="12" fill="#92400e" text-anchor="middle">一格 = 15.65 ps（≈4.7 mm）</text>
+  <rect x="30" y="192" width="758" height="42" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="5 4"/>
+  <text x="46" y="219" font-size="13" fill="#334155">一小节 = 508 个主时钟周期 = 1017.63 ns　⇒　整数倍，网格与小节永远对齐，不累积相位误差</text>
+
+  <text x="28" y="266" font-size="15" font-weight="700" fill="#1e293b">② 一个小节 ≈ 1 µs：靠「脉冲放哪半」+「整串朝上还是朝下」装比特</text>
+  <rect x="90" y="280" width="620" height="44" rx="4" fill="#f8fafc" stroke="#94a3b8"/>
+  <line x1="400" y1="280" x2="400" y2="324" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="245" y="307" font-size="12" fill="#94a3b8" text-anchor="middle">前半</text>
+  <text x="515" y="307" font-size="12" fill="#94a3b8" text-anchor="middle">后半</text>
+  <use href="#blip" transform="translate(200,302)"/>
+  <text x="726" y="307" font-size="13" fill="#1e293b">位置 = 前半　→　位置比特 = 0</text>
+  <rect x="90" y="344" width="620" height="44" rx="4" fill="#f8fafc" stroke="#94a3b8"/>
+  <line x1="400" y1="344" x2="400" y2="388" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <use href="#blip" transform="translate(510,366)"/>
+  <text x="726" y="371" font-size="13" fill="#1e293b">位置 = 后半　→　位置比特 = 1</text>
+  <rect x="90" y="408" width="620" height="44" rx="4" fill="#f8fafc" stroke="#94a3b8"/>
+  <line x1="400" y1="408" x2="400" y2="452" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <use href="#blip" transform="translate(200,430) scale(1,-1)" stroke="#ea580c"/>
+  <text x="726" y="435" font-size="13" fill="#1e293b">同位置、整串朝下　→　极性比特翻转</text>
+  <rect x="90" y="466" width="1000" height="38" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="106" y="491" font-size="13" fill="#1e3a8a">每小节比特 = log₂(落点位置数) ＋ 1（极性）　：两位置 = 2 比特　·　四位置 = 3 比特　·　八位置 = 4 比特</text>
+
+  <text x="28" y="542" font-size="15" font-weight="700" fill="#1e293b">③ 一小节在 PRF 网格里怎么摊开：约 65 个 15.6 ns 的格子（burst 只占连续几格）</text>
+  <text x="310" y="566" font-size="12" fill="#1d4ed8" text-anchor="middle">前半 ≈ 32 格</text>
+  <text x="810" y="566" font-size="12" fill="#9a3412" text-anchor="middle">后半 ≈ 33 格（这一半空着）</text>
+  <rect x="60" y="574" width="500" height="64" fill="#eff6ff" stroke="#bfdbfe"/>
+  <rect x="560" y="574" width="500" height="64" fill="#fff7ed" stroke="#fed7aa"/>
+  <rect x="60" y="574" width="1000" height="64" fill="url(#grid)"/>
+  <line x1="560" y1="566" x2="560" y2="646" stroke="#64748b" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <use href="#blip" transform="translate(160,606) scale(0.55)"/>
+  <use href="#blip" transform="translate(175.4,606) scale(0.55)"/>
+  <use href="#blip" transform="translate(190.8,606) scale(0.55)"/>
+  <path d="M152,578 L152,572 L199,572 L199,578" fill="none" stroke="#2563eb" stroke-width="1.3"/>
+  <text x="206" y="577" font-size="11" fill="#1d4ed8" font-weight="700">burst = 连续 3 格（3 个脉冲）</text>
+  <text x="60" y="662" font-size="12" fill="#475569">↑ 每格 15.6 ns；每格内最多放一个 1–2 ns 的脉冲。burst = 连续 N 格各放 1 个（N 是配置项）</text>
+  <text x="60" y="682" font-size="12" fill="#475569">所以「burst 占 3 格」= 3 个脉冲、跨度 47 ns，但真正辐射只有 3–6 ns；空格留给回声与「位移编码」</text>
+
+  <text x="28" y="714" font-size="15" font-weight="700" fill="#1e293b">④ 前导小节 vs 数据小节：同一副架子，一个固定、一个随比特变</text>
+  <rect x="90" y="728" width="620" height="40" rx="4" fill="#f1f5f9" stroke="#94a3b8"/>
+  <line x1="400" y1="728" x2="400" y2="768" stroke="#cbd5e1" stroke-dasharray="4 3"/>
+  <use href="#blip" transform="translate(200,748)"/>
+  <text x="726" y="744" font-size="12" fill="#1e293b">前导：位置与极性由标准定死 →</text>
+  <text x="726" y="762" font-size="12" fill="#64748b">不装比特，只用来「对齐 + 量信道」</text>
+  <rect x="90" y="780" width="620" height="40" rx="4" fill="#f8fafc" stroke="#94a3b8"/>
+  <line x1="400" y1="780" x2="400" y2="820" stroke="#cbd5e1" stroke-dasharray="4 3"/>
+  <use href="#blip" transform="translate(200,800)"/>
+  <use href="#blip" transform="translate(510,800)" stroke="#94a3b8" stroke-dasharray="4 3"/>
+  <text x="726" y="796" font-size="12" fill="#1e293b">数据：burst 落在哪半、朝哪边 →</text>
+  <text x="726" y="814" font-size="12" fill="#64748b">由当前比特决定，所以「每节换个字」</text>
+  <text x="90" y="864" font-size="12" fill="#475569">所以前导是「同一句话重复 64–4096 遍」，数据是「每节换一个字」—— 这就是前导那么长却一个字节都不传的原因</text>
+</svg>
